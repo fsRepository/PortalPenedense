@@ -24,13 +24,23 @@ function Portal() {
             </header>
 
             <div className="card">
-                <CardSitucao
-                    nome={data.nome}
-                    cidade={data.cidade}
-                    uf={data.uf}
-                    situacao={data.situacao}
-                // IMG= {data.img}                    
-                />
+                {
+                    data.situacao === 0 ?
+                        < CardSitucao
+                            nome={data.nome}
+                            cidade={data.cidade}
+                            uf={data.uf}
+                            situacao="Ativo"
+                        // IMG= {data.img}                    
+                        /> :
+                        < CardSitucao
+                            nome={data.nome}
+                            cidade={data.cidade}
+                            uf={data.uf}
+                            situacao="Inativo"
+                        // IMG= {data.img}                    
+                        />
+                }
             </div>
 
             <footer>
