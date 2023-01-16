@@ -5,10 +5,11 @@ import CardSitucao from "../../Componentes/Card"
 import axios from "axios"
 
 function Portal() {
-    const [data, setData] = useState({})
+    const [data, setData] = useState({});
+    const codigo = location.pathname.substring(1);
 
     useEffect(() => {
-        axios.get('https://localhost:44346/cliente/GetInfo?codigo=000001')
+        axios.get(`http://penedenseapi.focosistemas.net/cliente/getinfo?codigo=${codigo}`)
             .then(
                 function (res) {
                     setData(res.data)
@@ -42,9 +43,6 @@ function Portal() {
                         />
                 }
             </div>
-
-            <footer>
-            </footer>
         </>
     )
 }
