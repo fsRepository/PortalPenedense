@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:500&display=swap);
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif ;
+    
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 66px);
+    align-items: center;
+}

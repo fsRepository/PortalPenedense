@@ -1,0 +1,52 @@
+.divCard {
+    max-width: 650px;
+    height: 350px;
+    border: 2px solid #FA1717;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.divCard .head {
+    height: calc(30% - 20px);
+    padding-top: 20px;
+    width: 100%;
+}
+.divCard .head h2 {
+    color: #FA1717;
+    margin-left: 30%;
+    display: inline;
+}
+
+.divCard .body {
+    display: flex;
+    flex-direction: row;    
+    height: 70%;
+    background-color: #FA1717;
+    border-radius: 0 0 20px 20px;
+    border: 2px solid #FA1717;
+}
+
+.divCard .body img {
+    position: relative;
+    top: -25%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #FFF;
+    border: 2px solid #FA1717;
+    margin-left: 25px;    
+}
+
+.divCard .body .info {
+    width: 70%;
+    margin-left: 10%;
+}
+
+.divCard .body .info p {
+    background-color: #FFF;
+    display: table;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #FA1717;
+    
+}
