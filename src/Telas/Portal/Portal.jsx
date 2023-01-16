@@ -7,6 +7,9 @@ import axios from "axios"
 function Portal() {
     const [data, setData] = useState({});
     const codigo = location.pathname.substring(1);
+    const checkSituacao = (value) => {
+        return value == 1 ? 'ATIVO' : 'INATIVO'
+    }
 
     useEffect(() => {
         axios.get(`http://penedenseapi.focosistemas.net/cliente/getinfo?codigo=${codigo}`)
@@ -25,23 +28,13 @@ function Portal() {
             </header>
 
             <div className="card">
-                {
-                    data.situacao === 0 ?
-                        < CardSitucao
-                            nome={data.nome}
-                            cidade={data.cidade}
-                            uf={data.uf}
-                            situacao="Ativo"
-                        // IMG= {data.img}                    
-                        /> :
-                        < CardSitucao
-                            nome={data.nome}
-                            cidade={data.cidade}
-                            uf={data.uf}
-                            situacao="Inativo"
-                        // IMG= {data.img}                    
-                        />
-                }
+                < CardSitucao
+                nome={data.nome}
+                cidade={data.cidade}
+                uf={data.uf}
+                situacao={checkSituacao(data.situacao)}
+                // IMG= {data.img}                    
+                /> 
             </div>
         </>
     )
