@@ -6,17 +6,16 @@ import axios from "axios"
 
 function Portal() {
     const [data, setData] = useState({});
-    const codigo = location.pathname.substring(1);
     const checkSituacao = (value) => {
         return value == 1 ? 'ATIVO' : 'INATIVO'
     }
 
     useEffect(() => {
-        axios.get(`http://penedenseapi.focosistemas.net/cliente/getinfo?codigo=${codigo}`)
+        axios.get(`http://penedenseapi.focosistemas.net/cliente/getinfo?codigo=${localStorage.getItem('codigo')}`)
             .then(
                 function (res) {
-                    setData(res.data)
-                    console.log(data)
+                    setData(res.data);
+                    localStorage.removeItem("codigo");
                 }
             )
     }, [])
