@@ -12,18 +12,16 @@ function Login() {
     
 
     function getUser(e) {
-        setLogin(e.target.value)
-        console.log(e.target.value)
+        setLogin(e.target.value)        
     }
     function getSenha(e) {
         setSenha(e.target.value)
-        console.log(e.target.value)
     }
 
     function sign() {
-        axios.get(`http://penedenseapi.focosistemas.net/user/getinfo?user=${login}&senha=${senha}`)
+        axios.get(`https://penedenseapinode.onrender.com/login?user=${login}&senha=${senha}`)
             .then((res) => {
-                if (res.data == 'True') {                    
+                if (res.data == true) {                    
                     setUser(true);
                     acessar();
                 } else {

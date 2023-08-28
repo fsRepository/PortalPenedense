@@ -11,7 +11,7 @@ function Portal() {
     }
 
     useEffect(() => {
-        axios.get(`http://penedenseapi.focosistemas.net/cliente/getinfo?codigo=${localStorage.getItem('codigo')}`)
+        axios.get(`https://penedenseapinode.onrender.com/getinfo?codigo=${localStorage.getItem('codigo')}`)
             .then(
                 function (res) {
                     setData(res.data);
@@ -28,10 +28,10 @@ function Portal() {
 
             <div className="card">
                 < CardSitucao
-                nome={data.nome}
-                cidade={data.cidade}
-                uf={data.uf}
-                situacao={checkSituacao(data.situacao)}
+                nome={data.NOME}
+                cidade={data.CIDADE}
+                uf={data.UF}
+                situacao={checkSituacao(data.SITUACAO)}
                 // IMG= {data.img}                    
                 /> 
             </div>
